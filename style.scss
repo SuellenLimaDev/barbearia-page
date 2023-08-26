@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+@import "partials/colors";
+@import "partials/header";
+@import "partials/layout";
+
+body{
+    font-family: 'Sora', sans-serif;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+
+    background-color: $primary-normal;
+}
+
+button{
+    font-family: 'Sora', sans-serif;
+    cursor: pointer;
+}
+
+svg{
+    width: 100%;
+}
+
+img{
+    width: 100%;
+}
+
+a{
+   cursor: pointer;
+   text-decoration: none;
+}
+
+.bg-home{
+    position: relative;
+}
+
+//para colocar a imagem de fundo
+.bg-home::before{
+    content: ''; // sem conteudo
+    display: block;
+    position: absolute;
+    //no fundo havera um gradiente para baixo com uma cor para se fundir com outra foto
+    background-image: linear-gradient( to bottom, rgba(6, 18, 30, 0.1), #06121e), url("assets/bg.svg");
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; //embaixo do conteudo
+    background-size: cover; // quem quebrar a imagem
+    background-repeat: no-repeat; // para não repetir a imagem
+    opacity: 0.9; // opacidade
+}
+
